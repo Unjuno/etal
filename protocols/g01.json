@@ -1,0 +1,91 @@
+{
+  "id": "G0-1-v1",
+  "status": "prospective finite development diagnostic; not G2 registration",
+  "created_date_jst": "2026-11-26",
+  "parent_commit": "eee648b9322edd45100b348e2f54a76bdfc452cb",
+  "environment": {
+    "records": 2,
+    "initial_counts": [0, 1],
+    "count_cap": 2,
+    "max_calls": 5,
+    "source_append_record": "A",
+    "consequence_append_record": "B",
+    "idempotent_write": "max(old_count, 1); never silently repairs duplication",
+    "goal": [1, 1],
+    "fault_at_first_write": {"none": "1/2", "pre": "1/4", "ack": "1/4"},
+    "repair": "reset one record to zero; irreversible damage flag remains",
+    "source_initial_A_zero": "1/2",
+    "frequency_initial_A_zero": "3/4",
+    "initial_B_zero": "1/2",
+    "sender": "exact initial local receipt strings, no pending future fault label; G0 observation diagnostic only",
+    "receiver": "framed message and its own public action-observation history",
+    "communication": "one initial message per job; deterministic codec fixed within each phase",
+    "actions": ["FINALIZE", "WRITE_A", "WRITE_B", "INSPECT_A", "INSPECT_B", "REPAIR_A", "REPAIR_B"]
+  },
+  "utility": {
+    "success": "1",
+    "damage_penalty": "1/2",
+    "write_cost": "1/50",
+    "repair_cost": "1/10",
+    "finalize_cost": "0",
+    "horizon_exhaustion": "failure unless explicit FINALIZE occurred; charge irreversible damage",
+    "unit": "dimensionless normalized utility; not seconds or measured currency"
+  },
+  "communication": {
+    "alphabet": ["a", "b"],
+    "compressed_codec_class": "all 16 deterministic maps from four receipt observations to one symbol",
+    "no_communication": "empty payload with the same two-byte frame",
+    "fixed_sufficient": ["aa", "ab", "ba", "bb"],
+    "frame": "uint8 version + uint8 payload length + ASCII bytes",
+    "initial_deployment": "version/length header + four codewords + two-byte acknowledgement; NC zero deployment",
+    "migration": "same codebook deployment bytes plus modeled extra update fee; atomic barrier between jobs",
+    "version_mismatch": "reject; never silently decode",
+    "model_learning_cost": "not measured; extra update fee is a sensitivity parameter, not a training cost estimate"
+  },
+  "grid": {
+    "branches": ["N", "C", "F"],
+    "inspect_cost": ["0", "1/10", "2/5"],
+    "byte_cost": ["0", "1/100", "1/20"],
+    "extra_update_fee": ["0", "1", "10"],
+    "jobs_per_phase": [10, 100, 1000],
+    "expected_cells": 243
+  },
+  "comparisons": [
+    "all source-optimal one-symbol codecs retained, receiver optimally readapted",
+    "forced switch to target-optimal one-symbol codec, charged even if unnecessary",
+    "oracle option to retain or switch, with full range across source-optimal ties",
+    "best single one-symbol static codec for equally weighted source and target phases",
+    "fixed sufficient two-symbol codec, no retraining assumed",
+    "no communication with identical paid inspection access"
+  ],
+  "analysis": {
+    "arithmetic": "exact fractions and finite-horizon belief-state dynamic programming",
+    "initial_state_distribution": "enumerate all 12 count/fault combinations; no Monte Carlo error",
+    "tie_policy": "all tied source codecs retained; lexical action order for deterministic rollout of equal-value policies",
+    "lifecycle": "equal source and target job counts; initial deployment charged once, migration once",
+    "selected_cell_rule": "C only, extra_update_fee=1 and jobs_per_phase=100; require worst-tie optional lifecycle advantage >1/50 over max(best static one-symbol, sufficient fixed, no communication), forced target gain >1/50, and zero hazard with success=1 for target oracle; among eligible choose smallest byte_cost then inspect_cost. If none, no selected cell; do not tune grid after seeing learning outcomes.",
+    "positive_regime": "forced target gain >0",
+    "neutral_regime": "optional gain=0",
+    "negative_regime": "forced target gain<0; optional retention cannot be negative by definition",
+    "F_interpretation": "frequency-only alternative mechanism, not an assumed null",
+    "N_interpretation": "no-change control",
+    "stop": "complete all cells; implementation defect invalidates affected results and is logged before rerun"
+  },
+  "validation": [
+    "N/C identical initial distributions and scoring; F identical transitions to N",
+    "public TIMEOUT identical for pre-write and post-commit failures, but persistent hidden states differ",
+    "hidden future faults do not change sender inputs",
+    "exact solver checked by independent exhaustive rollout of saved receiver policies",
+    "independent SQLite transitions and multi-step trajectories, without calling finite step",
+    "actual frame and migration serialization, version rejection and equal-cost symbol rename",
+    "complete deterministic grid rerun and content hash comparison"
+  ],
+  "claim_limits": [
+    "oracle knows transition model and distribution; no learned language evolution or neural readiness",
+    "only one initial message; no learned chunks or dynamic dialogue",
+    "exact local receipts are privileged relative to noisy practical observations",
+    "all costs modeled in normalized utility; no actual network or model update timing",
+    "SQLite is an independent implementation check, not G3 learned transfer or real-tool adaptation",
+    "no container runtime available locally; do not claim Docker execution"
+  ]
+}
