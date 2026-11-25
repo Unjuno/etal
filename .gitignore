@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.sqlite*
+/source/
+/history/audit-v0.4/source/
+/history/audit-v0.4/inputs/ETAL_original_reproducibility.zip
+/runs/raw/

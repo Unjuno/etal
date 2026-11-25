@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Q1 / ENV-001 — Quantify when semantic recoding has net value",
+    "body": "## Gate\nG0\n\n## Goal\nComplete exact finite-state sequential diagnostic. Compare no communication, sufficient fixed code, best static code, and adaptive oracle with all migration and inspection costs.\n\n## Acceptance criteria\n- [ ] Verify positive, neutral and negative regimes; enumerate code ties; report optimality and full grid; freeze selection rule before learning. G0-0 is preliminary only.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 1,
+    "url": "https://github.com/Unjuno/etal/issues/1"
+  },
+  {
+    "title": "Q2 / ENV-002 — Isolate consequence shifts from frequency shifts",
+    "body": "## Gate\nG0\n\n## Goal\nImplement C/F/N branches in a stateful failure environment with atomic tool actions. Keep first-decision distribution and scoring fixed for C; change transition consequences only.\n\n## Acceptance criteria\n- [ ] Unit tests for paired exogenous randomness, fixed initial marginals, no reset within jobs, and distinct failure injection points. Document endogenous trajectory shifts.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 2,
+    "url": "https://github.com/Unjuno/etal/issues/2"
+  },
+  {
+    "title": "Q3 / OBS-001 — Enforce information boundaries",
+    "body": "## Gate\nG0/G1\n\n## Goal\nSeparate sender observations, receiver public history and external evaluator. Freeze model weights during each job; updates only use completed jobs.\n\n## Acceptance criteria\n- [ ] Schema tests show no hidden fault labels, hidden-state bypass, shared-memory or gradient leakage. Equal inspection option across conditions.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 3,
+    "url": "https://github.com/Unjuno/etal/issues/3"
+  },
+  {
+    "title": "Q4 / LEARN-001 — Establish basic communication and recovery",
+    "body": "## Gate\nG1\n\n## Goal\nUse 12 development seeds to establish basic skills before adaptation. Record all runs, failed attempts and tuning costs.\n\n## Acceptance criteria\n- [ ] Target 95% safe success per basic fault in all 12 seeds. Fix architecture, budgets, trainable parameters and observed runtime; if gate fails do not start G2.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 4,
+    "url": "https://github.com/Unjuno/etal/issues/4"
+  },
+  {
+    "title": "Q5 / BASE-001+002 — Implement matched controls",
+    "body": "## Gate\nG1/G2\n\n## Goal\nImplement FF, FA, AF, AA from identical parent checkpoints; add NC, FS, FC, IB, AR strong controls.\n\n## Acceptance criteria\n- [ ] Check codec freeze including embeddings and state; match sampling, actor update count, initial checkpoints and exogenous seeds; separate equal-experience and equal-compute tracks.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 5,
+    "url": "https://github.com/Unjuno/etal/issues/5"
+  },
+  {
+    "title": "Q6 / EVAL-001 — Measure semantic change and causal use",
+    "body": "## Gate\nG1/G2\n\n## Goal\nSeparate surface renaming, partition change, intervention effects, utility, safety, retention and held-out transfer.\n\n## Acceptance criteria\n- [ ] Same-cost cross-state swap, equivalent-state swap and joint renaming control; report coverage, per-seed outcomes and independent evaluator contract.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 6,
+    "url": "https://github.com/Unjuno/etal/issues/6"
+  },
+  {
+    "title": "Q7 / COST-001 — Account for complete lifecycle costs",
+    "body": "## Gate\nG1/G2\n\n## Goal\nSeparate simulated time from measured wall time, payload from framing, compute from synchronization, and tool execution from recovery.\n\n## Acceptance criteria\n- [ ] Report real wire bytes, blocking update/sync costs, compute, hardware/version manifest and reproducible cost accounting. Do not double count or set unmeasured costs to zero.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 7,
+    "url": "https://github.com/Unjuno/etal/issues/7"
+  },
+  {
+    "title": "Q8 / PROTO-001 — Freeze the confirmatory protocol",
+    "body": "## Gate\nG2 entry\n\n## Goal\nChoose regime by G0 information value only; set n from G1 variability; freeze hypotheses, margins, all seeds, held-out folds, code and environment hashes before looking at confirmation outcomes.\n\n## Acceptance criteria\n- [ ] Publish a timestamped protocol; 30–100 independent seed blocks as specified by power rule; preregister failure/stop/multiplicity rules; no outcome-driven early stop.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 8,
+    "url": "https://github.com/Unjuno/etal/issues/8"
+  },
+  {
+    "title": "Q9 / CONF-001 — Run confirmation and independent backend validation",
+    "body": "## Gate\nG2/G3\n\n## Goal\nRun the locked comparison and publish all results; then distinguish independent fixed transfer G3a from real-tool online adaptation G3b. G4 is a separate future question.\n\n## Acceptance criteria\n- [ ] Report estimates/intervals, hazard margin, negative results, held-out failures, and full reproducibility. Do not claim utility or latency improvements beyond measured evidence.\n\n## Evidence\nRecord the commit, commands, configuration, logs, and negative results. See `history/audit-v0.4/ETAL_research_plan_v0_4.md`.",
+    "issue": 9,
+    "url": "https://github.com/Unjuno/etal/issues/9"
+  }
+]

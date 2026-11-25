@@ -1,0 +1,12 @@
+{
+  "scope": "local finite diagnostic only",
+  "python": "3.13.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "processor": "",
+  "gpu_used": false,
+  "arithmetic": "exact rational fractions",
+  "grid_cells": 864,
+  "unit_tests_passed": 10,
+  "container_validated": false,
+  "github_ci_executed": false
+}
