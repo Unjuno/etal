@@ -1,0 +1,31 @@
+{
+  "scope": "G0-1 finite diagnostic; no neural training",
+  "first_attempt": {
+    "run_id": 45713810886,
+    "job_id": 139554672186,
+    "commit": "4ea3f426c6149986e6dc5a5b90f20e1bb7690ff2",
+    "url": "https://github.com/Unjuno/etal/actions/runs/45713810886",
+    "outcome": "failure",
+    "passed_before_failure": ["33 host tests", "G0-0 exact reproduction", "G0-1 exact reproduction", "Docker build"],
+    "failure": "Base-image metadata inspection: Error response from daemon: No such image: python:3.12-slim",
+    "cause": "BuildKit resolved and built the base but did not separately register its tag in the Docker image store",
+    "fix": "Pin the digest observed during the successful build; inspect only the built experiment image",
+    "scientific_code_or_results_changed_by_fix": false
+  },
+  "successful_validation": {
+    "run_id": 45714233529,
+    "job_id": 139556075024,
+    "commit": "afdbe1bd27b0fddac7f3cf70759521ca20df0cb6",
+    "url": "https://github.com/Unjuno/etal/actions/runs/45714233529",
+    "outcome": "success",
+    "host_tests_passed": 33,
+    "container_tests_passed": 33,
+    "host_g01_exact_reproduction": true,
+    "container_g01_exact_reproduction": true,
+    "matched_files": ["grid.csv", "codec_metrics.csv", "summary.json", "representative_traces.json"],
+    "base_image": "python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b",
+    "observed_built_image_id": "sha256:78032c4b0c20e42b2218440f739ea383c6466a1290b5ffca38c6286756988627",
+    "container_limits": {"cpus": 1, "memory_mib": 512, "network": "none", "read_only_root": true, "tmpfs_tmp_mib": 64, "uid_gid": "65534:65534"},
+    "timing_claim": "No inference or learning-speed benchmark"
+  }
+}

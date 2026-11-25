@@ -31,7 +31,7 @@ PYTHONPATH=src python -m etal.run_g01 --out /tmp/etal-g01
 cmp results/g01/grid.csv /tmp/etal-g01/grid.csv
 ```
 
-The initial [GitHub Actions run](https://github.com/Unjuno/etal/actions/runs/45696204600) passed the original diagnostic. The expanded workflow now builds a development container, runs the full tests and reproduces deterministic G0-1 outputs with networking disabled and a read-only root filesystem. The badge and run logs are the authority on execution status; configuration alone is not evidence of a passed run. See [reproduction instructions](docs/REPRODUCIBILITY.md).
+The expanded [GitHub Actions run 45714233529](https://github.com/Unjuno/etal/actions/runs/45714233529) **passed**: 33 tests and deterministic G0-1 reproduction both on the host and inside a container with a pinned base digest, networking disabled, a read-only root filesystem, and limits of 1 CPU / 512 MiB. The badge shows the latest workflow status. See [reproduction instructions](docs/REPRODUCIBILITY.md), including the retained first-attempt metadata failure and its correction.
 
 ## Read in this order
 

@@ -27,7 +27,7 @@ python scripts/plot_g01.py
 
 ## Container reproduction
 
-The local environment used for initial computation had no Docker or Podman executable. The GitHub Actions workflow separately builds and executes this recipe; consult the run log to confirm its observed result.
+The local environment used for initial computation had no Docker or Podman executable. GitHub Actions [run 45714233529](https://github.com/Unjuno/etal/actions/runs/45714233529), at commit `afdbe1bd27b0fddac7f3cf70759521ca20df0cb6`, **successfully built and executed the container**. All 33 tests and all four deterministic G0-1 result comparisons passed both on the host and inside the container. The evidence is also summarized in [ci_validation.json](../results/g01/ci_validation.json). This is the finite diagnostic, not a model-training container.
 
 ```sh
 docker build -t etal-g01:dev .
