@@ -1,0 +1,3 @@
+# Preserve exact bytes of archived evidence and the reference grid.
+results/g0_grid.csv -text
+history/audit-v0.4/** -text

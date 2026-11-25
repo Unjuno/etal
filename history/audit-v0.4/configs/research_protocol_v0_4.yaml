@@ -1,0 +1,125 @@
+schema_version: 1
+protocol_version: ETAL_v0.4
+date_jst: '2026-11-26'
+status: design_proposal_not_preregistered
+authoritative_plan: ETAL_research_plan_v0_4.md
+existing_results_are_development_evidence_only: true
+question: semantic_partition_adaptation_under_fixed_frequency_consequence_shift
+primary:
+  comparison: AA_minus_FA
+  outcome: mean_net_utility_over_all_adaptation_jobs
+  success_normalization: 1.0
+  practical_margin: 0.02
+  hazard_rate_increase_margin: 0.005
+  adaptation_jobs: 5000
+  return_phase_jobs: 2000
+  confidence: 0.95
+  interval: paired_seed_t_two_sided
+  sensitivity_interval: paired_seed_bootstrap
+  optional_early_success_stop: false
+  safety_zero_event_bootstrap_pass_forbidden: true
+  pass_requires_valid_evaluation_gate: true
+development:
+  independent_seeds: 12
+  basic_skill_safe_success_target: 0.95
+  pretraining_job_candidates: [20000, 80000, 320000]
+  model_parameter_candidate_range: [100000, 300000]
+  development_seeds_must_not_enter_confirmation: true
+confirmation:
+  independent_seeds_minimum: 30
+  independent_seeds_maximum: 100
+  independent_seeds_step: 10
+  final_number: null
+  power_target: 0.90
+  planning_effect: 0.05
+  planning_standard_deviation: upper_90_percent_bound_from_development_paired_sd
+  power_method: noncentral_t_upper_tail_at_two_sided_95_percent_lower_bound
+  failed_training_seeds_are_retained: true
+  unseen_combination_folds: 4
+  independent_unit: seed_block
+  all_folds_run_within_every_seed_block: true
+  child_seeds_distinct_per_fold: true
+  fold_aggregation: equal_weight_mean_within_seed_block
+  primary_branch: consequence_shift
+  primary_operating_regime_id: null
+  operating_regime_freeze: before_learning_comparison_using_G0_information_value_only
+  diagnostic_checkpoints: [0, 100, 500, 1000, 2500, 5000]
+  stop_for_effect_size_or_p_value: false
+  stop_for_environment_contract_violation: true
+branches:
+  - consequence_shift_fixed_initial_state_distribution
+  - frequency_shift_fixed_transition_and_loss
+  - no_shift
+arms:
+  FF: {codec_update: false, actor_update: false}
+  FA: {codec_update: false, actor_update: true}
+  AF: {codec_update: true, actor_update: false}
+  AA: {codec_update: true, actor_update: true}
+  NC: {communication: none, inspection_allowed: true}
+  FS: {communication: lossless_fixed_observation_serialization}
+  FC: {communication: fixed_semantics_frequency_only_recoding, charge_synchronization: true}
+  IB: {communication: adapted_VQ_VIB_baseline, privileged_supervision_must_be_matched: true}
+  AR: {communication: joint_with_replay_or_retention, charge_replay_compute: true}
+matching:
+  shared_parent_for: [FF, FA, AF, AA, AR]
+  codec_includes: [sender, decoder, embeddings, normalizer_state, dictionary, communication_memory]
+  matched_actor_update_count_primary: true
+  matched_sampling_schedule_primary: true
+  external_randomness_paired: true
+  endogenous_trajectories_need_not_match: true
+  separate_equal_experience_and_equal_compute_tracks: true
+information:
+  exact_state_sender_allowed_in_diagnostic_track_only: true
+  weights_fixed_within_episode: true
+  updates_use_completed_prior_episodes_only: true
+  practical_sender_inputs: [local_logs, tool_outputs, available_time_and_version_information]
+  hidden_fault_label_to_agents: false
+  evaluate_central_training_and_distributed_update_claims_separately: true
+channel_candidates:
+  primary_channel_noise_probability: 0.0
+  secondary_channel_noise_candidates: [0.01, 0.05]
+  alphabet: abcdefghijklmnop
+  maximum_content_symbols: [4, 8]
+  eos: explicit
+  silence: explicit_with_transport_cost
+  wire_encoding: null
+  charge: [payload, framing, length, version, retransmission, synchronization]
+evaluation:
+  distinguish: [surface_form_change, semantic_partition_change, causal_use, net_utility, retention, transfer]
+  interventions: [normal, same_length_cross_state_swap, equivalent_state_swap, cost_preserving_joint_symbol_rename]
+  report_intervention_coverage: true
+  frozen_policy_hazard_evaluation_is_conditional_on_tested_models: true
+  secondary_confirmatory_family_control: Holm
+  independent_backend: [sqlite, filesystem]
+  G3a: frozen_policy_transfer_and_transition_consistency
+  G3b: real_tool_online_adaptation_required_for_external_adaptation_benefit
+  mechanism_contrast: AA_minus_FA_in_C_minus_AA_minus_FA_in_N
+  partial_sqlite_update_must_cross_transactions: true
+costs:
+  simulated_time_and_wall_time_separate: true
+  double_count_same_cost_forbidden: true
+  cpu_unit: core_seconds
+  gpu_track_separate: true
+  coefficients: {time: null, bandwidth: null, damage: null, compute: null}
+  reference_scales: {time_seconds: null, wire_bits: null, damage_units: null, core_seconds_per_job: null}
+  all_candidates_and_failed_trials_count: true
+  blocking_update_and_sync_in_critical_path: true
+  overlapping_time_counted_once: true
+  source_pretraining_and_hpo_separate_lifecycle_ledger: true
+freeze_before_confirmation:
+  code_commit: null
+  config_digest: null
+  model_architecture: null
+  model_parameter_count: null
+  optimizer: null
+  learning_rate: null
+  batch_size: null
+  seed_generation_rule: null
+  task_generator_digest: null
+  source_training_budget: null
+  independent_evaluator_digest: null
+  container_image_digest: null
+  dependency_lock: null
+  hardware_manifest: null
+  timestamped_registration_record: null
+null_fields_are_preconfirmation_deliverables_not_completed_steps: true

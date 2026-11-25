@@ -1,0 +1,8 @@
+**
+!Dockerfile
+!src/
+!src/**
+!tests/
+!tests/**
+!results/
+!results/g0_grid.csv

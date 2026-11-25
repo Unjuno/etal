@@ -1,0 +1,15 @@
+test_all_cells (test_g0.TestG0.test_all_cells) ... ok
+test_consequence_keeps_initial_marginal (test_g0.TestG0.test_consequence_keeps_initial_marginal) ... ok
+test_free_inspection_removes_benefit (test_g0.TestG0.test_free_inspection_removes_benefit) ... ok
+test_frequency_no_semantic_shift (test_g0.TestG0.test_frequency_no_semantic_shift) ... ok
+test_migration_cost (test_g0.TestG0.test_migration_cost) ... ok
+test_no_shift (test_g0.TestG0.test_no_shift) ... ok
+test_source_compression (test_g0.TestG0.test_source_compression) ... ok
+test_sufficient_fixed (test_g0.TestG0.test_sufficient_fixed) ... ok
+test_sufficient_source_ties_are_retained (test_g0.TestG0.test_sufficient_source_ties_are_retained) ... ok
+test_symbol_rename (test_g0.TestG0.test_symbol_rename) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 6.847s
+
+OK
