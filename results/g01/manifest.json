@@ -1,0 +1,20 @@
+{
+  "protocol_sha256": "0ff01a0a4b209af781ef90fa1caaaa2499e377e3a43fab999f436b25a958fe74",
+  "source_sha256": {
+    "src/etal/__init__.py": "4f3ee2b5778f5ddbb55050d28101eee31f6623efae93d23274f16c1cd5165a12",
+    "src/etal/g0.py": "3d4a70e39a570a49411b2d98362e2fd1e458c807c1903f7397648ae1cdd44443",
+    "src/etal/run_g01.py": "8a605ce0343337696b13c9ce5b71a66aad99f235c467a50d5e5e031d8d5b80b3",
+    "src/etal/sequential.py": "b960b663eaa28b8ba9a5ba7a3a9d332e91822687505588a640d39da59cc4d531",
+    "src/etal/sqlite_backend.py": "566669fd02c2ece8f17a67c2ddbd33d1a4c09533ca41e8fd47a6bb68eb57b565",
+    "src/etal/stateful.py": "327743bfc9cb9b1847431dbf569a76a8fa4e1a1bb10a51b295327533bcd3c87a"
+  },
+  "result_sha256": {
+    "cell_timings.json": "6a0613259adae7582705ce61de512a18f89db42c20db0a59c6ae1520ad877bd3",
+    "codec_metrics.csv": "3554ff970f633113fd722f6438adc2452fada7495d5c9a0bc46556bffed7575e",
+    "grid.csv": "e0b8b3b6cfd9ffb57b9cef00278325bde06de1ce38adfd2998faf736c895e3b1",
+    "overview.png": "ca364ccc2f9c53761e827a78001a03b1fe9abb107625a2fe1f84b1c45082659b",
+    "overview.svg": "7281c16d98e162b5ed189d8f10df0c7847899053e24bac87a8e02e6f8481030b",
+    "representative_traces.json": "67d9a9a781c139b022fe3773a3d43873be6e8c1a7ab6142687fd344548fbd6f4",
+    "summary.json": "980590d91dcbb207ec1ac53bff37b255fdd1e691c350c92a133d120f7084c1ed"
+  }
+}

@@ -5,6 +5,11 @@ WORKDIR /app
 ENV PYTHONPATH=/app/src PYTHONDONTWRITEBYTECODE=1
 COPY src/ src/
 COPY tests/ tests/
+COPY protocols/ protocols/
 COPY results/g0_grid.csv results/g0_grid.csv
+COPY results/g01/grid.csv results/g01/grid.csv
+COPY results/g01/codec_metrics.csv results/g01/codec_metrics.csv
+COPY results/g01/summary.json results/g01/summary.json
+COPY results/g01/representative_traces.json results/g01/representative_traces.json
 USER 65534:65534
 CMD ["python", "-m", "unittest", "discover", "-s", "tests", "-v"]

@@ -1,23 +1,44 @@
-# Development reproduction (G0-0)
+# Reproduction: finite G0-0 and sequential G0-1
 
-The current code uses the Python standard library only (3.10+). It is a finite one-decision oracle, not a learned model or the full sequential G0 gate.
+The scientific calculations use only Python's standard library (Python 3.10+ including SQLite). G0-1 is exact finite belief-state planning, **not neural training**. The historical original experiment and audit have their own dependencies and are separate.
 
-From repository root:
+## Local reproduction
 
 ```sh
 PYTHONPATH=src python -m unittest discover -s tests -v
 PYTHONPATH=src python -m etal.g0 --out /tmp/g0_grid.csv
 cmp results/g0_grid.csv /tmp/g0_grid.csv
+PYTHONPATH=src python -m etal.run_g01 --out /tmp/etal-g01
+cmp results/g01/grid.csv /tmp/etal-g01/grid.csv
+cmp results/g01/codec_metrics.csv /tmp/etal-g01/codec_metrics.csv
+cmp results/g01/summary.json /tmp/etal-g01/summary.json
+cmp results/g01/representative_traces.json /tmp/etal-g01/representative_traces.json
 ```
 
-The committed reference grid contains 864 cells. Original local run metadata and logs are in [results](../results/).
+The original G0-0 reference grid has 864 cells. G0-1 has 243 cells, with all 12 initial worlds enumerated. The runner also evaluates target-optimal codec ties and two controls through the independent SQLite implementation: 576 policy/world jobs and 2,085 atomic calls. These deterministic results must reproduce exactly; run times and timestamps will differ.
 
-Container smoke-test recipe (Dockerfile supplied; not validated at initial import; base tag not frozen):
+G0-1 was initially evaluated after [prospective protocol commit c37c867](https://github.com/Unjuno/etal/commit/c37c867cf3479daf2ac7765c25d2182c9540bf07). That is a development-stage freeze, not G2 registration. Source and result hashes are in `results/g01/manifest.json`; hardware, Python, SQLite and execution command are in `results/g01/runtime.json`. The runtime's `parent_git_head` records the checkout at execution; modified source is identified by the separate SHA-256 manifest.
+
+Optional figure generation uses matplotlib; the executed plotting environment used matplotlib 3.10.8. It is not needed for the calculations or tests:
 
 ```sh
-docker build -t etal-g0:dev .
-docker run --rm --network=none --read-only etal-g0:dev
-docker run --rm --network=none --read-only --tmpfs /tmp etal-g0:dev sh -c 'python -m etal.g0 --out /tmp/g0_grid.csv && cmp results/g0_grid.csv /tmp/g0_grid.csv'
+python scripts/plot_g01.py
 ```
 
-Before any confirmatory run, freeze the source commit, image digest, dependency lock, configuration, independent evaluator and seed-generation rule. Keep failed seeds and report all costs. See the [proposed protocol](../history/audit-v0.4/ETAL_research_plan_v0_4.md).
+## Container reproduction
+
+The local environment used for initial computation had no Docker or Podman executable. The GitHub Actions workflow separately builds and executes this recipe; consult the run log to confirm its observed result.
+
+```sh
+docker build -t etal-g01:dev .
+docker run --rm --network=none --read-only --cpus=1 --memory=512m --tmpfs /tmp:rw,nosuid,nodev,size=64m etal-g01:dev
+docker run --rm --network=none --read-only --cpus=1 --memory=512m --tmpfs /tmp:rw,nosuid,nodev,size=64m etal-g01:dev sh -c 'python -m etal.run_g01 --out /tmp/g01 && cmp results/g01/grid.csv /tmp/g01/grid.csv && cmp results/g01/codec_metrics.csv /tmp/g01/codec_metrics.csv && cmp results/g01/summary.json /tmp/g01/summary.json && cmp results/g01/representative_traces.json /tmp/g01/representative_traces.json'
+```
+
+The image runs as unprivileged UID/GID 65534, with writable temporary SQLite files only in the supplied tmpfs. The development base starts at `python:3.12-slim`; the workflow records the resolved base digest and image ID. A tag alone is not an immutable environment lock. No GPU, pretrained model, external API or network is used by the experiment.
+
+Before any confirmatory run, freeze the source commit, base image digest, dependency lock, configuration, independent evaluator and seed-generation rule. Keep failed runs and report all costs. See the [v0.4 proposal](../history/audit-v0.4/ETAL_research_plan_v0_4.md).
+
+## What the checks do not establish
+
+The sender receives exact initial local receipts; noisy observation inference is untested. The planner knows the transition model; learning and full update cost are unmeasured. SQLite verifies a deliberately finite contract with one injected first-write fault, not actual network loss or power-failure durability. API information boundaries are structural tests, not an OS isolation guarantee. The container's OS limits and the model's observation boundaries address different issues.

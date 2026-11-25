@@ -1,0 +1,65 @@
+[
+  {
+    "branch": "N",
+    "inspect_cost": "0",
+    "elapsed_seconds": 0.3009869119996438,
+    "bellman_cache_entries": 683,
+    "transition_cache_entries": 1554
+  },
+  {
+    "branch": "C",
+    "inspect_cost": "0",
+    "elapsed_seconds": 0.260063423000247,
+    "bellman_cache_entries": 683,
+    "transition_cache_entries": 1554
+  },
+  {
+    "branch": "F",
+    "inspect_cost": "0",
+    "elapsed_seconds": 0.18021036099889898,
+    "bellman_cache_entries": 935,
+    "transition_cache_entries": 2079
+  },
+  {
+    "branch": "N",
+    "inspect_cost": "1/10",
+    "elapsed_seconds": 0.14167353300035757,
+    "bellman_cache_entries": 683,
+    "transition_cache_entries": 1554
+  },
+  {
+    "branch": "C",
+    "inspect_cost": "1/10",
+    "elapsed_seconds": 0.1497746940003708,
+    "bellman_cache_entries": 683,
+    "transition_cache_entries": 1554
+  },
+  {
+    "branch": "F",
+    "inspect_cost": "1/10",
+    "elapsed_seconds": 0.1625261290009803,
+    "bellman_cache_entries": 935,
+    "transition_cache_entries": 2079
+  },
+  {
+    "branch": "N",
+    "inspect_cost": "2/5",
+    "elapsed_seconds": 0.16880933199900028,
+    "bellman_cache_entries": 683,
+    "transition_cache_entries": 1554
+  },
+  {
+    "branch": "C",
+    "inspect_cost": "2/5",
+    "elapsed_seconds": 0.1518182079998951,
+    "bellman_cache_entries": 683,
+    "transition_cache_entries": 1554
+  },
+  {
+    "branch": "F",
+    "inspect_cost": "2/5",
+    "elapsed_seconds": 0.3869228080002358,
+    "bellman_cache_entries": 935,
+    "transition_cache_entries": 2079
+  }
+]

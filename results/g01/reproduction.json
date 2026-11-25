@@ -1,0 +1,23 @@
+{
+  "deterministic_byte_matches": {
+    "grid.csv": true,
+    "codec_metrics.csv": true,
+    "summary.json": true,
+    "representative_traces.json": true
+  },
+  "source_hashes_identical": true,
+  "runtime_seconds": [
+    2.148644582999623,
+    1.6919154900006106
+  ],
+  "reproduction_scope": "four deterministic scientific outputs and same source hashes; timestamps and timings excluded",
+  "source_sha256": {
+    "src/etal/__init__.py": "4f3ee2b5778f5ddbb55050d28101eee31f6623efae93d23274f16c1cd5165a12",
+    "src/etal/g0.py": "3d4a70e39a570a49411b2d98362e2fd1e458c807c1903f7397648ae1cdd44443",
+    "src/etal/run_g01.py": "8a605ce0343337696b13c9ce5b71a66aad99f235c467a50d5e5e031d8d5b80b3",
+    "src/etal/sequential.py": "b960b663eaa28b8ba9a5ba7a3a9d332e91822687505588a640d39da59cc4d531",
+    "src/etal/sqlite_backend.py": "566669fd02c2ece8f17a67c2ddbd33d1a4c09533ca41e8fd47a6bb68eb57b565",
+    "src/etal/stateful.py": "327743bfc9cb9b1847431dbf569a76a8fa4e1a1bb10a51b295327533bcd3c87a"
+  },
+  "selected_protocol_public_commit": "c37c867cf3479daf2ac7765c25d2182c9540bf07"
+}

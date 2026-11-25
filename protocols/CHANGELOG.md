@@ -1,3 +1,4 @@
 # Protocol change log
 
 - 2026-11-26: historical v0.4 research proposal imported without changing its confirmatory thresholds. Not preregistered. G0-0 added as a development-only exact one-step diagnostic. No G1+ claims or confirmed result. The next protocol revision must specify sequential G0 and freeze conditions before confirmatory results are accessed.
+- 2026-11-26: G0-1 finite sequential development protocol published as `protocols/g01.json` in commit `c37c867cf3479daf2ac7765c25d2182c9540bf07` before its grid evaluation. All 243 cells, source-code tie handling, common-horizon fees, and operating-cell selection rule fixed in advance. The actual C intervention swaps which of two records is append-like. G0-only exact receipt observations and model-based planning are explicit. This does not preregister G2 or change v0.4's neural G1 gate.

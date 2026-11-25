@@ -1,0 +1,38 @@
+test_all_cells (test_g0.TestG0.test_all_cells) ... ok
+test_consequence_keeps_initial_marginal (test_g0.TestG0.test_consequence_keeps_initial_marginal) ... ok
+test_free_inspection_removes_benefit (test_g0.TestG0.test_free_inspection_removes_benefit) ... ok
+test_frequency_no_semantic_shift (test_g0.TestG0.test_frequency_no_semantic_shift) ... ok
+test_migration_cost (test_g0.TestG0.test_migration_cost) ... ok
+test_no_shift (test_g0.TestG0.test_no_shift) ... ok
+test_source_compression (test_g0.TestG0.test_source_compression) ... ok
+test_sufficient_fixed (test_g0.TestG0.test_sufficient_fixed) ... ok
+test_sufficient_source_ties_are_retained (test_g0.TestG0.test_sufficient_source_ties_are_retained) ... ok
+test_symbol_rename (test_g0.TestG0.test_symbol_rename) ... ok
+test_common_lifecycle_charges_both_phases_and_migration (test_sequential_oracle.TestSequentialOracle.test_common_lifecycle_charges_both_phases_and_migration) ... ok
+test_costly_forced_switch_is_negative_optional_can_retain (test_sequential_oracle.TestSequentialOracle.test_costly_forced_switch_is_negative_optional_can_retain) ... ok
+test_framing_bytes_and_version_rejection (test_sequential_oracle.TestSequentialOracle.test_framing_bytes_and_version_rejection) ... ok
+test_horizon_exhaustion_requires_explicit_finalization (test_sequential_oracle.TestSequentialOracle.test_horizon_exhaustion_requires_explicit_finalization) ... ok
+test_no_change_optional_gain_is_exactly_zero (test_sequential_oracle.TestSequentialOracle.test_no_change_optional_gain_is_exactly_zero) ... ok
+test_paid_inspection_is_charged_once (test_sequential_oracle.TestSequentialOracle.test_paid_inspection_is_charged_once) ... ok
+test_policy_value_matches_independent_sqlite_enumeration (test_sequential_oracle.TestSequentialOracle.test_policy_value_matches_independent_sqlite_enumeration) ... ok
+test_simultaneous_symbol_renaming_changes_no_value (test_sequential_oracle.TestSequentialOracle.test_simultaneous_symbol_renaming_changes_no_value) ... ok
+test_two_call_values_derived_by_hand (test_sequential_oracle.TestSequentialOracle.test_two_call_values_derived_by_hand) ... ok
+test_commit_is_persisted_before_ack_loss (test_stateful.TestSQLiteBackend.test_commit_is_persisted_before_ack_loss) ... ok
+test_exhaustive_single_step_state_action_equivalence (test_stateful.TestSQLiteBackend.test_exhaustive_single_step_state_action_equivalence) ... ok
+test_independent_backend_has_no_finite_transition_call (test_stateful.TestSQLiteBackend.test_independent_backend_has_no_finite_transition_call) ... ok
+test_multi_step_recovery_and_persisted_damage (test_stateful.TestSQLiteBackend.test_multi_step_recovery_and_persisted_damage) ... ok
+test_pre_failure_leaves_rows_unchanged (test_stateful.TestSQLiteBackend.test_pre_failure_leaves_rows_unchanged) ... ok
+test_c_changes_only_write_consequences (test_stateful.TestStatefulContract.test_c_changes_only_write_consequences) ... ok
+test_c_preserves_initial_worlds_exactly (test_stateful.TestStatefulContract.test_c_preserves_initial_worlds_exactly) ... ok
+test_f_changes_no_transition (test_stateful.TestStatefulContract.test_f_changes_no_transition) ... ok
+test_finalization_does_not_leak_success_to_actor (test_stateful.TestStatefulContract.test_finalization_does_not_leak_success_to_actor) ... ok
+test_inspection_is_available_and_unchanged_for_all_conditions (test_stateful.TestStatefulContract.test_inspection_is_available_and_unchanged_for_all_conditions) ... ok
+test_pre_and_ack_have_same_feedback_different_persistence (test_stateful.TestStatefulContract.test_pre_and_ack_have_same_feedback_different_persistence) ... ok
+test_repair_does_not_reset_job_or_clear_hazard (test_stateful.TestStatefulContract.test_repair_does_not_reset_job_or_clear_hazard) ... ok
+test_sender_observation_has_no_future_fault_or_damage (test_stateful.TestStatefulContract.test_sender_observation_has_no_future_fault_or_damage) ... ok
+test_validation_prevents_ambiguous_or_invalid_inputs (test_stateful.TestStatefulContract.test_validation_prevents_ambiguous_or_invalid_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 11.827s
+
+OK

@@ -1,0 +1,15 @@
+{
+  "started_at_utc": "2026-11-25T22:23:06.371969+00:00",
+  "elapsed_seconds": 2.148644582999623,
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "clock_control": "not controlled",
+  "device": "CPU",
+  "execution": "single process, no parallel workers",
+  "batch": "not applicable: exact enumeration",
+  "container_runtime": "not executed",
+  "parent_git_head": "eee648b9322edd45100b348e2f54a76bdfc452cb",
+  "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -m etal.run_g01 --protocol protocols/g01.json --out results/g01"
+}

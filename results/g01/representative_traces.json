@@ -1,0 +1,1470 @@
+[
+  {
+    "initial_counts": [
+      0,
+      0
+    ],
+    "pending_fault_evaluator_only": "none",
+    "probability": "1/8",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "24/25",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 3,
+      "writes": 2,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000161",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              0,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_B",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        3,
+        "WRITE_B",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        4,
+        "WRITE_B",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        5,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      0,
+      0
+    ],
+    "pending_fault_evaluator_only": "pre",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "47/50",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 4,
+      "writes": 3,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000161",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              0,
+              0
+            ],
+            "pre",
+            false
+          ],
+          "after": [
+            [
+              0,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              0,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_B",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "before_write_transaction",
+        "TIMEOUT"
+      ],
+      [
+        2,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        3,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        4,
+        "WRITE_B",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        5,
+        "WRITE_B",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        6,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      0,
+      0
+    ],
+    "pending_fault_evaluator_only": "ack",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "47/50",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 4,
+      "writes": 3,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000161",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              0,
+              0
+            ],
+            "ack",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_B",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "after_commit_ack_lost",
+        "TIMEOUT"
+      ],
+      [
+        3,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        4,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        5,
+        "WRITE_B",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        6,
+        "WRITE_B",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        7,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      0,
+      1
+    ],
+    "pending_fault_evaluator_only": "none",
+    "probability": "1/8",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "49/50",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 2,
+      "writes": 1,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000162",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              0,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        3,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      0,
+      1
+    ],
+    "pending_fault_evaluator_only": "pre",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "24/25",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 3,
+      "writes": 2,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000162",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              0,
+              1
+            ],
+            "pre",
+            false
+          ],
+          "after": [
+            [
+              0,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              0,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "before_write_transaction",
+        "TIMEOUT"
+      ],
+      [
+        2,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        3,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        4,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      0,
+      1
+    ],
+    "pending_fault_evaluator_only": "ack",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "24/25",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 3,
+      "writes": 2,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000162",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              0,
+              1
+            ],
+            "ack",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "after_commit_ack_lost",
+        "TIMEOUT"
+      ],
+      [
+        3,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        4,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        5,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      1,
+      0
+    ],
+    "pending_fault_evaluator_only": "none",
+    "probability": "1/8",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "24/25",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 3,
+      "writes": 2,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000161",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_B",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        3,
+        "WRITE_B",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        4,
+        "WRITE_B",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        5,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      1,
+      0
+    ],
+    "pending_fault_evaluator_only": "pre",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "47/50",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 4,
+      "writes": 3,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000161",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "pre",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_B",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "before_write_transaction",
+        "TIMEOUT"
+      ],
+      [
+        2,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        3,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        4,
+        "WRITE_B",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        5,
+        "WRITE_B",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        6,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      1,
+      0
+    ],
+    "pending_fault_evaluator_only": "ack",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "47/50",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 4,
+      "writes": 3,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000161",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "ack",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_B",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              0
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "after_commit_ack_lost",
+        "TIMEOUT"
+      ],
+      [
+        3,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        4,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        5,
+        "WRITE_B",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        6,
+        "WRITE_B",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        7,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      1,
+      1
+    ],
+    "pending_fault_evaluator_only": "none",
+    "probability": "1/8",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "49/50",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 2,
+      "writes": 1,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000162",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        3,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      1,
+      1
+    ],
+    "pending_fault_evaluator_only": "pre",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "24/25",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 3,
+      "writes": 2,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000162",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "pre",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "before_write_transaction",
+        "TIMEOUT"
+      ],
+      [
+        2,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        3,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        4,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  },
+  {
+    "initial_counts": [
+      1,
+      1
+    ],
+    "pending_fault_evaluator_only": "ack",
+    "probability": "1/16",
+    "code": [
+      "a",
+      "b",
+      "a",
+      "b"
+    ],
+    "result": {
+      "utility": "24/25",
+      "success": 1,
+      "safe_success": 1,
+      "hazard": 0,
+      "calls": 3,
+      "writes": 2,
+      "inspections": 0,
+      "repairs": 0,
+      "frame_hex": "000162",
+      "trace": [
+        {
+          "action": "WRITE_A",
+          "observation": "TIMEOUT",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "ack",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "WRITE_A",
+          "observation": "OK",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        },
+        {
+          "action": "FINALIZE",
+          "observation": "DONE",
+          "before": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ],
+          "after": [
+            [
+              1,
+              1
+            ],
+            "none",
+            false
+          ]
+        }
+      ]
+    },
+    "sqlite_events_evaluator_only": [
+      [
+        1,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        2,
+        "WRITE_A",
+        "after_commit_ack_lost",
+        "TIMEOUT"
+      ],
+      [
+        3,
+        "WRITE_A",
+        "write_transaction_commit",
+        ""
+      ],
+      [
+        4,
+        "WRITE_A",
+        "acknowledged",
+        "OK"
+      ],
+      [
+        5,
+        "FINALIZE",
+        "finalize",
+        "DONE"
+      ]
+    ]
+  }
+]

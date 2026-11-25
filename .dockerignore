@@ -4,5 +4,12 @@
 !src/**
 !tests/
 !tests/**
+!protocols/
+!protocols/**
 !results/
 !results/g0_grid.csv
+!results/g01/
+!results/g01/grid.csv
+!results/g01/codec_metrics.csv
+!results/g01/summary.json
+!results/g01/representative_traces.json

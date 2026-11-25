@@ -13,3 +13,19 @@ jobs:
       - run: PYTHONPATH=src python -m unittest discover -s tests -v
       - run: PYTHONPATH=src python -m etal.g0 --out /tmp/g0_grid.csv
       - run: diff results/g0_grid.csv /tmp/g0_grid.csv
+      - name: Reproduce the sequential exact diagnostic
+        run: |
+          PYTHONPATH=src python -m etal.run_g01 --out /tmp/g01
+          cmp results/g01/grid.csv /tmp/g01/grid.csv
+          cmp results/g01/codec_metrics.csv /tmp/g01/codec_metrics.csv
+          cmp results/g01/summary.json /tmp/g01/summary.json
+          cmp results/g01/representative_traces.json /tmp/g01/representative_traces.json
+      - name: Build development container and record resolved base
+        run: |
+          docker build -t etal-g01:ci .
+          docker image inspect python:3.12-slim --format '{{json .RepoDigests}}'
+          docker image inspect etal-g01:ci --format '{{.Id}}'
+      - name: Run tests and reproduce data inside an isolated container
+        run: |
+          docker run --rm --network=none --read-only --cpus=1 --memory=512m --tmpfs /tmp:rw,nosuid,nodev,size=64m etal-g01:ci
+          docker run --rm --network=none --read-only --cpus=1 --memory=512m --tmpfs /tmp:rw,nosuid,nodev,size=64m etal-g01:ci sh -c 'python -m etal.run_g01 --out /tmp/g01 && cmp results/g01/grid.csv /tmp/g01/grid.csv && cmp results/g01/codec_metrics.csv /tmp/g01/codec_metrics.csv && cmp results/g01/summary.json /tmp/g01/summary.json && cmp results/g01/representative_traces.json /tmp/g01/representative_traces.json'

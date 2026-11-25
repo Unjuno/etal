@@ -1,6 +1,6 @@
 # ETAL — Evolutionary Task-Adaptive Language
 
-**Research in progress / 研究中 · v0.0.1 · 2026-11-26 JST**
+**Research in progress / 研究中 · v0.0.2 · 2026-11-26 JST**
 
 [![Finite diagnostic tests](https://github.com/Unjuno/etal/actions/workflows/test.yml/badge.svg)](https://github.com/Unjuno/etal/actions/workflows/test.yml)
 
@@ -15,18 +15,23 @@
 - Historical pilot: useful communication in some runs; net improvement from updating communication was **not established**. The audit found weak initial skill, seed concentration and confounded evolutionary comparisons.
 - v0.4 research plan: **proposal, not yet preregistered**. Do not treat planned sample sizes or thresholds as validated results.
 - G0 starter: exact single-decision diagnostic with four observable states, binary actions, fixed-width messages and a paid perfect-inspection option. **864 grid cells; 10 local tests passed.** It is an oracle calculation, not learned communication, sequential tool execution, wall-clock speed or a full G0 gate.
-- G1–G4: not implemented. No claim of novelty priority, improved LLM performance, or container validation.
+- **G0-1 completed:** finite sequential stateful recovery, 243 exact cost cells, one initial message, explicit framing/migration and independent SQLite verification. The prospectively selected cell has modeled lifecycle utility **0.801 vs 0.767** for the strongest listed static control. Forced updating loses in 177 cells. **33 tests passed; 576 SQLite policy/world jobs (2,085 atomic calls) matched.** See the [full report](docs/G01.md), [independent review](docs/G01_REVIEW.md) and [all results](results/g01/).
+- G1–G4: not implemented. G0-1 uses a model-based oracle with exact initial receipts. It establishes theoretical headroom in a finite model, not learned language evolution, novelty priority, or improved LLM performance.
+
+![Sequential diagnostic overview](results/g01/overview.png)
 
 ## Quick start
 
-Python 3.10+; no third-party dependency for the finite diagnostic. Tested in the local CPU runtime; see `results/runtime.json`. From the repository root:
+Python 3.10+ with the standard-library SQLite module; no third-party dependency for the finite diagnostics. G0-1 was executed with Python 3.12.14 / SQLite 3.53.1 on CPU; see `results/g01/runtime.json`. From the repository root:
 
 ```sh
 PYTHONPATH=src python -m unittest discover -s tests -v
 PYTHONPATH=src python -m etal.g0 --out results/g0_grid.csv
+PYTHONPATH=src python -m etal.run_g01 --out /tmp/etal-g01
+cmp results/g01/grid.csv /tmp/etal-g01/grid.csv
 ```
 
-The initial [GitHub Actions run](https://github.com/Unjuno/etal/actions/runs/45696204600) passed the unit tests and exact CSV reproduction. The badge shows the current workflow status. The supplied Dockerfile is a development recipe; Docker execution has not been verified. See [reproduction instructions](docs/REPRODUCIBILITY.md).
+The initial [GitHub Actions run](https://github.com/Unjuno/etal/actions/runs/45696204600) passed the original diagnostic. The expanded workflow now builds a development container, runs the full tests and reproduces deterministic G0-1 outputs with networking disabled and a read-only root filesystem. The badge and run logs are the authority on execution status; configuration alone is not evidence of a passed run. See [reproduction instructions](docs/REPRODUCIBILITY.md).
 
 ## Read in this order
 
@@ -36,6 +41,9 @@ The initial [GitHub Actions run](https://github.com/Unjuno/etal/actions/runs/456
 | [Prior audit](history/audit-v0.4/ETAL_audit_report_2026_11_26.md) | Negative results, limitations and evidence |
 | [Prior art](history/audit-v0.4/references/prior_art.csv) | 22 references and novelty assessment |
 | [G0 notes](docs/G0.md) | Diagnostic, assumptions, example results, limits |
+| [G0-1 report](docs/G01.md) | Sequential model, all 243 cells, exact optimization, limitations |
+| [G0-1 prospective protocol](protocols/g01.json) | Grid and selection rule published before evaluation |
+| [G0-1 independent review](docs/G01_REVIEW.md) | Environment, observation boundaries, cost accounting and gate assessment |
 | [Nine issues](ISSUES.md) | Live GitHub Issues and acceptance criteria |
 | [Release and evidence policy](docs/PUBLICATION.md) | Publication, experiment changes, raw data, licensing |
 | [Research protocol config](history/audit-v0.4/configs/research_protocol_v0_4.yaml) | Historical machine-readable proposal with unset fields |
