@@ -1,0 +1,36 @@
+{
+  "kind": "planning_examples_not_experiment_results",
+  "power_examples": [
+    {
+      "paired_sd": 0.03,
+      "minimum_n": 13,
+      "rounded_n": 30,
+      "within_cap": true,
+      "planning_effect": 0.05,
+      "margin": 0.02,
+      "power": 0.9
+    },
+    {
+      "paired_sd": 0.06,
+      "minimum_n": 44,
+      "rounded_n": 50,
+      "within_cap": true,
+      "planning_effect": 0.05,
+      "margin": 0.02,
+      "power": 0.9
+    },
+    {
+      "paired_sd": 0.09,
+      "minimum_n": 97,
+      "rounded_n": 100,
+      "within_cap": true,
+      "planning_effect": 0.05,
+      "margin": 0.02,
+      "power": 0.9
+    }
+  ],
+  "fixed_model_zero_hazard_upper": 0.006376512858843553,
+  "one_environment_minimum_adaptation_jobs": 16200000,
+  "one_environment_maximum_adaptation_jobs": 54000000,
+  "illustrative_utility": 0.9349999999999999
+}

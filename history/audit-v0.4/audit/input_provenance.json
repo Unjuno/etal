@@ -1,0 +1,27 @@
+[
+  {
+    "file_name": "ETAL_final_report.md",
+    "bytes": 13622,
+    "sha256": "2ba20f90866aa9bf42c9e926ca857d99b6af2a234094c5f055e77dd4a40b71bd"
+  },
+  {
+    "file_name": "ETAL_full_experiment_reproducibility.zip",
+    "bytes": 15746857,
+    "sha256": "0610cf1d6e0e3f224d3403ad15a725e8b1af044ccb6e6aba838937364dff86e5"
+  },
+  {
+    "file_name": "ETAL_final_summary.csv",
+    "bytes": 9097,
+    "sha256": "2073201ec009a83cd18491c2f8ed5c5cdcc030fbb5f7e4989892be7d6d22f4fb"
+  },
+  {
+    "file_name": "ETAL_final_contrasts.csv",
+    "bytes": 15807,
+    "sha256": "e6283acd10f20729b21aef4cb55862abc2ccfa7597abebbd9cb3f6da5d0ff230"
+  },
+  {
+    "file_name": "ETAL_experiment_protocol_v0_1.md",
+    "bytes": 12373,
+    "sha256": "00d8adb300bf8a38c0887e4187e1ad46445ca65f8dfb5d9b8b9b22a22cd8d344"
+  }
+]
