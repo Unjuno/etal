@@ -1,6 +1,6 @@
 # Research issues (Q1–Q9)
 
-All nine initial issues are open. G0-0 is preliminary; G0/G1 must pass before confirmation. See the canonical [research plan](history/audit-v0.4/ETAL_research_plan_v0_4.md).
+Q1 and Q2 are completed for the finite G0-1 diagnostic; Q3 is partially complete and remains open. Q4–Q9 remain open. G1 must pass before confirmation. See the [executed G0-1 report](docs/G01.md), [review](docs/G01_REVIEW.md), and canonical [research plan](history/audit-v0.4/ETAL_research_plan_v0_4.md).
 
 - [Q1 / ENV-001 — Quantify when semantic recoding has net value](https://github.com/Unjuno/etal/issues/1)
 - [Q2 / ENV-002 — Isolate consequence shifts from frequency shifts](https://github.com/Unjuno/etal/issues/2)

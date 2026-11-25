@@ -20,10 +20,9 @@ jobs:
           cmp results/g01/codec_metrics.csv /tmp/g01/codec_metrics.csv
           cmp results/g01/summary.json /tmp/g01/summary.json
           cmp results/g01/representative_traces.json /tmp/g01/representative_traces.json
-      - name: Build development container and record resolved base
+      - name: Build container from pinned base and record image
         run: |
           docker build -t etal-g01:ci .
-          docker image inspect python:3.12-slim --format '{{json .RepoDigests}}'
           docker image inspect etal-g01:ci --format '{{.Id}}'
       - name: Run tests and reproduce data inside an isolated container
         run: |

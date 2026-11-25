@@ -88,7 +88,7 @@ The finite probabilities are exhaustively enumerated, so these scores have no Mo
 
 These execution counts come from different checks and include overlapping cases; they must not be added and presented as unique independent samples. SQLite validation is an implementation check of the finite tool contract, not learned-policy transfer or online adaptation in an external tool service.
 
-The [runtime record](../results/g01/runtime.json) identifies Python 3.12.14, SQLite 3.53.1, CPU execution on an Intel Xeon Platinum 8573C, a single process, and uncontrolled clock conditions. Batch size is not applicable to the exact enumeration. The recorded wall time is run provenance, not an inference-speed benchmark. Docker was not executed. The recorded Git parent identifies the checkout base; executed source bytes are identified separately by the manifest hashes.
+The [runtime record](../results/g01/runtime.json) identifies Python 3.12.14, SQLite 3.53.1, CPU execution on an Intel Xeon Platinum 8573C, a single process, and uncontrolled clock conditions. Batch size is not applicable to the exact enumeration. The recorded wall time is run provenance, not an inference-speed benchmark. Docker was not executed in that local run; subsequent CI container validation is recorded separately in [reproduction instructions](REPRODUCIBILITY.md). The recorded Git parent identifies the checkout base; executed source bytes are identified separately by the manifest hashes.
 
 ## 6. Gate disposition
 

@@ -35,7 +35,9 @@ docker run --rm --network=none --read-only --cpus=1 --memory=512m --tmpfs /tmp:r
 docker run --rm --network=none --read-only --cpus=1 --memory=512m --tmpfs /tmp:rw,nosuid,nodev,size=64m etal-g01:dev sh -c 'python -m etal.run_g01 --out /tmp/g01 && cmp results/g01/grid.csv /tmp/g01/grid.csv && cmp results/g01/codec_metrics.csv /tmp/g01/codec_metrics.csv && cmp results/g01/summary.json /tmp/g01/summary.json && cmp results/g01/representative_traces.json /tmp/g01/representative_traces.json'
 ```
 
-The image runs as unprivileged UID/GID 65534, with writable temporary SQLite files only in the supplied tmpfs. The development base starts at `python:3.12-slim`; the workflow records the resolved base digest and image ID. A tag alone is not an immutable environment lock. No GPU, pretrained model, external API or network is used by the experiment.
+The image runs as unprivileged UID/GID 65534, with writable temporary SQLite files only in the supplied tmpfs. The base is pinned to `python:3.12-slim@sha256:191083cdf6c7bda8c76158983163ead5d5cf7b77cf3033e805bb0f5296f51b4b`, resolved in the first observed CI build. The workflow records the built image ID; the base digest is in the Dockerfile and build log. No GPU, pretrained model, external API or network is used by the experiment.
+
+The first expanded CI attempt, [run 45713810886](https://github.com/Unjuno/etal/actions/runs/45713810886), passed all 33 host tests, both exact reproductions and the container build. It then stopped because `docker image inspect python:3.12-slim` assumed that BuildKit had separately registered the base tag in the Docker image store. The fix pins the digest already observed in the successful build and inspects only the built experiment image. This metadata failure did not change the experimental code or results; the failed run remains public.
 
 Before any confirmatory run, freeze the source commit, base image digest, dependency lock, configuration, independent evaluator and seed-generation rule. Keep failed runs and report all costs. See the [v0.4 proposal](../history/audit-v0.4/ETAL_research_plan_v0_4.md).
 
